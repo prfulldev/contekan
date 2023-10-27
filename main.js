@@ -9,6 +9,7 @@ try {
       return response.json();
     })
     .then(data => {
+      //console.log(data);
       
       for (var i = 0; i < data.length; i++) {
         mapel.innerHTML += `

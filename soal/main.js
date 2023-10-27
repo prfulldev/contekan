@@ -1,7 +1,7 @@
 let urlParam = new URLSearchParams(window.location.search);
 let target = urlParam.get("target");
 let id = urlParam.get("id");
-let dttgs = document.getElementById('daftar_tugas');
+let soal = document.getElementById('soal');
 
 //console.log(target, id);
 
@@ -10,27 +10,27 @@ try {
     .then(response => {
       if (!response.ok) {
         throw new Error('Gagal mengambil data');
-      } 
+      }
       return response.json();
     })
     .then(data => {
       //console.log(data);
-      
+
       for (var i = 0; i < data.length; i++) {
-        dttgs.innerHTML += `
+        soal.innerHTML += `
        <li>
-          <a href="../soal/index.html?target=jawaban&id=${data[i].id}">
-            <table>
-              <tr>
-                <td><h5>${data[i].daftar_soal} halaman ${data[i].halaman}</h5></td>
-              </tr>
-            </table>
-          </a>
-       </li>
+           <a href="${data[i].link}">
+             <table>
+               <tr>
+                 <td><h5>${data[i].no}. ${data[i].soal}</h5></td>
+               </tr>
+             </table>
+            </a>
+      </li>
       `;
-      } 
-      
-      
+      }
+
+
     })
     .catch(error => {
       console.error(error);
