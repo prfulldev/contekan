@@ -2,6 +2,7 @@ let urlParam = new URLSearchParams(window.location.search);
 let target = urlParam.get("target");
 let id = urlParam.get("id");
 let dttgs = document.getElementById('daftar_tugas');
+const loading = document.getElementById("loading");
 
 //console.log(target, id);
 
@@ -29,11 +30,13 @@ try {
        </li>
       `;
       } 
+      loading.style.display = "none";
       
       
     })
     .catch(error => {
       console.error(error);
+      loading.style.display = "none";
     });
 } catch (error) {
   console.error('Terjadi kesalahan:', error);

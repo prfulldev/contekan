@@ -1,4 +1,5 @@
 let mapel = document.getElementById('mapel');
+const loading = document.getElementById("loading");
 
 try {
   fetch('https://apicontekan.000webhostapp.com/api/?target=mapel')
@@ -36,11 +37,12 @@ try {
       </li>
       `;
       } 
-      
+      loading.style.display = "none";
       
     })
     .catch(error => {
       console.error(error);
+      loading.style.display = "none";
     });
 } catch (error) {
   console.error('Terjadi kesalahan:', error);
