@@ -13,7 +13,7 @@ try {
       for (var i = 0; i < data.length; i++) {
         mapel.innerHTML += `
          <li>
-        <a href="daftar_soal/index.html?id=${data[i].id}">
+        <a href="daftar_soal/index.html?target=daftar_tugas&id=${data[i].id}">
           <table>
             <tr>
               <td>Mapel</td>
