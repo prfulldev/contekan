@@ -56,9 +56,12 @@ header{
 
 /* search */
 
-.search-container{
+.search-container {
   width: 95%;
   padding-left: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .search{
   padding: 5px;
